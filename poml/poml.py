@@ -315,45 +315,45 @@ class Poml:
         with open(filepath, 'w') as file:
             file.write(poml_string)
 
-# Example usage:
-poml = Poml()
-
-poml_string = """
-# Example of Poml with various features
-person:
-  name: John Doe
-  age: 30
-  married: true
-  address: &addr
-    street: 123 Main St
-    city: Anytown
-    postalCode: 12345
-friends:
-  - name: Jane Smith
-    address: *addr
-  - name: Jim Brown
-    address: *addr
-bio: |
-  John Doe is a software engineer.
-  He lives in Anytown.
-description: >
-  John is passionate about coding
-  and loves to learn new technologies.
-notes:
-  - "Special characters: \"quotes\", \slashes\\, and more."
-  - "Use of single quotes: 'example'"
-fruits:
-  - Apple
-  # Comment within list
-  - Banana
-  - Cherry
-meeting_date: @date 2023-12-01
-meeting_time: @datetime 2023-12-01T10:00:00
-git_commit: @cmd git rev-parse HEAD
-user_data: @custom {"type": "premium", "expiry": "2024-12-01"}
-"""
-
 if __name__ == "__main__" :
+    # Example usage:
+    poml = Poml()
+
+    poml_string = """
+    # Example of Poml with various features
+    person:
+    name: John Doe
+    age: 30
+    married: true
+    address: &addr
+        street: 123 Main St
+        city: Anytown
+        postalCode: 12345
+    friends:
+    - name: Jane Smith
+        address: *addr
+    - name: Jim Brown
+        address: *addr
+    bio: |
+    John Doe is a software engineer.
+    He lives in Anytown.
+    description: >
+    John is passionate about coding
+    and loves to learn new technologies.
+    notes:
+    - "Special characters: \"quotes\", \slashes\\, and more."
+    - "Use of single quotes: 'example'"
+    fruits:
+    - Apple
+    # Comment within list
+    - Banana
+    - Cherry
+    meeting_date: @date 2023-12-01
+    meeting_time: @datetime 2023-12-01T10:00:00
+    git_commit: @cmd git rev-parse HEAD
+    user_data: @custom {"type": "premium", "expiry": "2024-12-01"}
+    """
+
     # Parse the Poml string into a Python dictionary
     parsed_data = poml.parse(poml_string)
     print("Parsed Data:")
